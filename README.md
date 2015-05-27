@@ -47,3 +47,8 @@ compile 'com.echodjb.shareloginlib:share:0.2'
                     }
                 });
  ```
+
+# 3.Demo
+-------------------------
+
+![screenshot](http://7xjb6z.com1.z0.glb.clouddn.com/screenshot.png)
