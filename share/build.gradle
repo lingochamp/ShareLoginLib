@@ -29,3 +29,100 @@ dependencies {
 
 }
 
+
+
+// 根节点添加
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+// 根节点添加
+version = "0.1"
+def siteUrl = 'https://github.com/echodjb/ShareLoginLib'    // project homepage
+def gitUrl = 'https://github.com/echodjb/ShareLoginLib.git' // project git
+
+// 根节点添加
+group = "com.echodjb.shareloginlib"
+
+install {
+    repositories.mavenInstaller {
+        // Generate POM.xml
+        pom {
+            project {
+                packaging 'aar'
+                name 'ShareLoginLib'
+                url siteUrl
+
+                licenses {
+                    license {
+                        name 'The MIT License'
+                        url 'http://opensource.org/licenses/MIT'
+                    }
+                }
+
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = "sources"
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options {
+        links("http://docs.oracle.com/javase/7/docs/api/");
+        linksOffline("http://d.android.com/reference", "${android.sdkDirectory}/docs/reference");
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
+
+
+
+artifacts {
+//    archives javadocJar
+    archives sourcesJar
+}
+
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "ShareLoginLib"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["MIT"]
+        publish = true
+    }
+}
+
+
+
+
+
