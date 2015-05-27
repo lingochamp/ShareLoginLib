@@ -1,7 +1,17 @@
 # ShareLoginLib
 ShareLoginLib likes simple sharesdk or umeng in China . It is a tool to help developers to share their content (image , text or music ) to WeChat,Weibo and QQ .
 
+# Including in your project
+-------------------------
+
+```groovy
+compile 'com.echodjb.shareloginlib:share:0.2'
+```
+
+
 # How to use (参考MainActivity)
+-------------------------
+
 #### 1.初始化申请的第三方key
 
 ```java

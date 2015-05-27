@@ -39,7 +39,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         final View rooView = findViewById(R.id.view);
-
+        
         ShareBlock.getInstance().initShare(" ", " ", "",
                 "");
 
