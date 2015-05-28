@@ -94,15 +94,15 @@ public class WechatShareManager implements IShareManager{
 
     private void sharePicture(int shareType, ShareContent shareContent) {
 
-        Bitmap bmp = BitmapFactory.decodeFile(shareContent.getImageUrl());
+        Bitmap bmp = ShareUtil.extractThumbNail(shareContent.getImageUrl(), THUMB_SIZE, THUMB_SIZE,
+                true);
         WXImageObject imgObj = new WXImageObject(bmp);
 
         WXMediaMessage msg = new WXMediaMessage();
         msg.mediaObject = imgObj;
-
-        Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
-        bmp.recycle();
-        msg.thumbData = ShareUtil.bmpToByteArray(thumbBmp);  //设置缩略图
+        if(bmp!=null){
+            msg.thumbData = ShareUtil.bmpToByteArray(bmp);  //设置缩略图
+        }
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = ShareUtil.buildTransaction("imgshareappdata");
         req.message = msg;
@@ -120,7 +120,7 @@ public class WechatShareManager implements IShareManager{
         msg.title = shareContent.getTitle();
         msg.description = shareContent.getContent();
 
-        Bitmap bmp = ShareUtil.extractThumbNail(shareContent.getImageUrl(), 150, 150, true);
+        Bitmap bmp = ShareUtil.extractThumbNail(shareContent.getImageUrl(), THUMB_SIZE, THUMB_SIZE, true);
         if (bmp == null) {
             Toast.makeText(mContext, mContext.getString(R.string.share_pic_empty),
                     Toast.LENGTH_SHORT).show();
@@ -146,7 +146,7 @@ public class WechatShareManager implements IShareManager{
         msg.title = shareContent.getTitle();
         msg.description = shareContent.getContent();
 
-        Bitmap thumb = ShareUtil.extractThumbNail(shareContent.getImageUrl(),150,150,true);
+        Bitmap thumb = ShareUtil.extractThumbNail(shareContent.getImageUrl(),THUMB_SIZE,THUMB_SIZE,true);
 
         if (thumb == null) {
             Toast.makeText(mContext, mContext.getString(R.string.share_pic_empty),
