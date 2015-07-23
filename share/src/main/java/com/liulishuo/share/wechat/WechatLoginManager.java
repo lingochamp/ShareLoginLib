@@ -1,6 +1,7 @@
 package com.liulishuo.share.wechat;
 
 
+import com.liulishuo.share.R;
 import com.liulishuo.share.ShareBlock;
 import com.liulishuo.share.base.login.GetUserListener;
 import com.liulishuo.share.base.login.ILoginManager;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -50,21 +52,19 @@ public class WechatLoginManager implements ILoginManager {
         if (!TextUtils.isEmpty(weChatAppId)) {
             mIWXAPI = WXAPIFactory.createWXAPI(context, weChatAppId, true);
             if (!mIWXAPI.isWXAppInstalled()) {
-                //Toast.makeText(context, context.getString(R.string.share_install_wechat_tips), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.share_install_wechat_tips), Toast.LENGTH_SHORT).show();
             } else {
                 mIWXAPI.registerApp(weChatAppId);
             }
         }
     }
 
-    public static IWXAPI getIWXAPI() {
-        return mIWXAPI;
+    public boolean isWetchatInstalled() {
+        return mIWXAPI.isWXAppInstalled();
     }
 
-
-    public static @NonNull
-    LoginListener getLoginListener() {
-        return mLoginListener;
+    public static IWXAPI getIWXAPI() {
+        return mIWXAPI;
     }
 
     @Override
