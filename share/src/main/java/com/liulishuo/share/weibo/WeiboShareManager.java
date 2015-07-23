@@ -35,6 +35,7 @@ public class WeiboShareManager implements IShareManager {
     public static final int WEIBO_SHARE_TYPE = 0;
 
     private Activity mActivity;
+    
     private String mSinaAppKey;
 
     private String mRedirectUrl;
@@ -102,7 +103,6 @@ public class WeiboShareManager implements IShareManager {
         allInOneShare(mActivity, request);
     }
 
-
     /**
      * 创建文本消息对象。
      *
@@ -144,7 +144,6 @@ public class WeiboShareManager implements IShareManager {
         mediaObject.defaultText = shareContent.getContent();
         return mediaObject;
     }
-
 
     /**
      * 创建多媒体（音乐）消息对象。
@@ -197,7 +196,6 @@ public class WeiboShareManager implements IShareManager {
             }
         });
     }
-
 
     @Override
     public void share(ShareContent shareContent, int shareType, @NonNull ShareStateListener listener) {

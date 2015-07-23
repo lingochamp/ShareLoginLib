@@ -130,13 +130,6 @@ public class WechatLoginManager implements ILoginManager {
                 // 用户拒绝授权
                 mLoginListener.onError("用户拒绝授权");
                 break;
-            case BaseResp.ErrCode.ERR_SENT_FAILED:
-                // 发送失败
-                mLoginListener.onError("发送失败");
-                break;
-            case BaseResp.ErrCode.ERR_COMM:
-                mLoginListener.onError("一般错误");
-                break;
             default:
                 mLoginListener.onError("未知错误");
         }

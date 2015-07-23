@@ -13,7 +13,6 @@ import com.liulishuo.share.wechat.WechatLoginManager;
 import com.liulishuo.share.wechat.WechatShareManager;
 import com.liulishuo.share.weibo.WeiboLoginManager;
 import com.liulishuo.share.weibo.WeiboShareManager;
-import com.tencent.connect.common.Constants;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -29,20 +28,6 @@ import java.io.FileOutputStream;
 
 
 public class MainActivity extends Activity {
-
-    private static int currentWay;
-
-    private static final int LOGIN_BY_WEIBO = 20;
-
-    public static final int SHARE_BY_WEIBO = 21;
-
-        private static final int LOGIN_BY_WECHAT = 31;
-    
-    public static final int SHARE_BY_WEICHAT = 32;
-
-    private static final int LOGIN_BY_QQ = 10;
-
-    public static final int SHARE_BY_QQ = 11;
 
     private ShareStateListener mShareListener = new ShareStateListener() {
         @Override
@@ -83,11 +68,9 @@ public class MainActivity extends Activity {
         }
     };
 
-    QQLoginManager mQQLoginManager;
+    ILoginManager mCurrentLoginManager;
 
-    QQShareManager qqShareManager;
-
-    WeiboLoginManager weiboLoginManager;
+    IShareManager mCurrentShareManager;
 
 
     @Override
@@ -98,31 +81,28 @@ public class MainActivity extends Activity {
         final View rooView = findViewById(R.id.view);
 
         ShareBlock.getInstance()
-                .initAppName("TestApp")
+                .initAppName("TestAppName")
                 .initQQ(OAuthConstant.QQ_APPID, OAuthConstant.QQ_SCOPE)
                 .initWechat(OAuthConstant.WECHAT_APPID, OAuthConstant.WECHAT_SECRET)
                 .initWeibo(OAuthConstant.WEIBO_APPID, OAuthConstant.WEIBO_REDIRECT_URL, OAuthConstant.WEIBO_SCOPE);
 
+        // 微信分享到回话
         findViewById(R.id.share_wechat_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = SHARE_BY_WEICHAT;
-
-                IShareManager iShareManager = new WechatShareManager(MainActivity.this);
-                iShareManager
-                        .share(new ShareContentWebpage("", "hello", "http://www.liulishuo.com", getImagePath(rooView)),
-                                WechatShareManager.WEIXIN_SHARE_TYPE_TALK
-                                , mShareListener);
+                mCurrentShareManager = new WechatShareManager(MainActivity.this);
+                mCurrentShareManager.share(new ShareContentWebpage("", "hello", "http://www.liulishuo.com", getImagePath(rooView)),
+                        WechatShareManager.WEIXIN_SHARE_TYPE_TALK
+                        , mShareListener);
             }
         });
 
+        // 微信分享到朋友圈
         findViewById(R.id.share_friends_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = SHARE_BY_WEICHAT;
-                IShareManager iShareManager = new WechatShareManager(MainActivity.this);
-                iShareManager.share(
-                        new ShareContentWebpage("hello", "", "http://www.liulishuo.com",
+                mCurrentShareManager = new WechatShareManager(MainActivity.this);
+                mCurrentShareManager.share(new ShareContentWebpage("hello", "", "http://www.liulishuo.com",
                                 getImagePath(rooView)),
                         WechatShareManager.WEIXIN_SHARE_TYPE_FRENDS
                         , mShareListener);
@@ -130,13 +110,12 @@ public class MainActivity extends Activity {
             }
         });
 
+        // 微信登录
         findViewById(R.id.login_wechat_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = LOGIN_BY_WECHAT;
-                ILoginManager iLoginManager = new WechatLoginManager
-                        (MainActivity.this);
-                iLoginManager.login(mLoginListener);
+                mCurrentLoginManager = new WechatLoginManager(MainActivity.this);
+                mCurrentLoginManager.login(mLoginListener);
             }
         });
 
@@ -145,19 +124,16 @@ public class MainActivity extends Activity {
         findViewById(R.id.login_weibo_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = LOGIN_BY_WEIBO;
-                weiboLoginManager = new WeiboLoginManager(MainActivity.this);
-                weiboLoginManager.login(mLoginListener);
+                mCurrentLoginManager = new WeiboLoginManager(MainActivity.this);
+                mCurrentLoginManager.login(mLoginListener);
             }
         });
 
         findViewById(R.id.share_weibo_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = SHARE_BY_WEIBO;
-                IShareManager iShareManager = new WeiboShareManager(MainActivity.this);
-                iShareManager
-                        .share(new ShareContentText("test"), WeiboShareManager.WEIBO_SHARE_TYPE, mShareListener);
+                mCurrentShareManager = new WeiboShareManager(MainActivity.this);
+                mCurrentShareManager.share(new ShareContentText("test"), WeiboShareManager.WEIBO_SHARE_TYPE, mShareListener);
             }
         });
 
@@ -167,30 +143,27 @@ public class MainActivity extends Activity {
         findViewById(R.id.login_qq_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = LOGIN_BY_QQ;
-                mQQLoginManager = new QQLoginManager(MainActivity.this);
-                mQQLoginManager.login(mLoginListener);
+                mCurrentLoginManager = new QQLoginManager(MainActivity.this);
+                mCurrentLoginManager.login(mLoginListener);
             }
         });
 
         findViewById(R.id.share_qq_friend_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentWay = SHARE_BY_QQ;
-                qqShareManager = new QQShareManager(MainActivity.this);
+                mCurrentShareManager = new QQShareManager(MainActivity.this);
 
                 ShareContentWebpage content = new ShareContentWebpage("title", "test", "http://www.baidu.com", getImagePath(rooView));
-                qqShareManager.share(content, QQShareManager.QQ_SHARE_TYPE, mShareListener);
+                mCurrentShareManager.share(content, QQShareManager.QQ_SHARE_TYPE, mShareListener);
             }
         });
 
         findViewById(R.id.share_qZone_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentWay = SHARE_BY_QQ;
-                qqShareManager = new QQShareManager(MainActivity.this);
+                mCurrentShareManager = new QQShareManager(MainActivity.this);
                 ShareContentWebpage content = new ShareContentWebpage("title", "test", "http://www.baidu.com", getImagePath(rooView));
-                qqShareManager.share(content, QQShareManager.QZONE_SHARE_TYPE, mShareListener);
+                mCurrentShareManager.share(content, QQShareManager.QZONE_SHARE_TYPE, mShareListener);
             }
         });
 
@@ -199,34 +172,9 @@ public class MainActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (currentWay) {
-            case LOGIN_BY_QQ:
-                mQQLoginManager.handlerOnActivityResult(requestCode, resultCode, data);
-                break;
-            case SHARE_BY_QQ:
-                qqShareManager.handlerOnActivityResult(requestCode, resultCode, data);
-                break;
-            case LOGIN_BY_WECHAT:
-                
-                break;
-            case SHARE_BY_WEICHAT:
-                
-                break;
-            case LOGIN_BY_WEIBO:
-                weiboLoginManager.handlerOnActivityResult(requestCode, resultCode, data);
-                break;
-            case SHARE_BY_WEIBO:
-
-                break;
-            default:
-                //fix the bug that qq sso failed.
-                if (requestCode == Constants.REQUEST_API) {
-                    if (resultCode == Constants.RESULT_LOGIN) {
-                        mQQLoginManager.getTencent().handleLoginData(data, null);
-                    }
-                }
-        }
+        ShareBlock.handlerOnActivityResult(mCurrentLoginManager, mCurrentShareManager,requestCode, resultCode, data);
     }
+
 
     /**
      * 截取对象是普通view

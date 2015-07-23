@@ -53,7 +53,6 @@ public class WeiboLoginManager implements ILoginManager {
         AuthInfo authInfo = new AuthInfo(mContext, mSinaAppKey, 
                 ShareBlock.getInstance().getWeiboRedirectUrl(),
                 ShareBlock.getInstance().getWeiboScope());
-        // TODO: 2015/7/22 判断微博客户端是否安装，如果没安装，跳转到网页版 
         mSsoHandler = new SsoHandler((Activity) mContext, authInfo);
         mSsoHandler.authorize(new AuthLoginListener());
     }

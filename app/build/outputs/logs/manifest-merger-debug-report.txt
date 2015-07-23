@@ -14,72 +14,72 @@ ADDED from AndroidManifest.xml:2:1
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 application
-ADDED from AndroidManifest.xml:6:5
+ADDED from AndroidManifest.xml:5:5
 MERGED from com.android.support:appcompat-v7:22.2.0:22:5
 MERGED from com.android.support:support-v4:22.2.0:22:5
 MERGED from ShareLoginLib:share:unspecified:18:5
 MERGED from com.android.support:appcompat-v7:22.2.0:22:5
 MERGED from com.android.support:support-v4:22.2.0:22:5
 	android:label
-		ADDED from AndroidManifest.xml:9:9
-	android:allowBackup
-		ADDED from AndroidManifest.xml:7:9
-	android:icon
 		ADDED from AndroidManifest.xml:8:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:6:9
+	android:icon
+		ADDED from AndroidManifest.xml:7:9
 	android:theme
-		ADDED from AndroidManifest.xml:10:9
+		ADDED from AndroidManifest.xml:9:9
 activity#com.liulishuo.engzo.MainActivity
-ADDED from AndroidManifest.xml:11:9
+ADDED from AndroidManifest.xml:10:9
 	android:label
-		ADDED from AndroidManifest.xml:13:13
-	android:name
 		ADDED from AndroidManifest.xml:12:13
+	android:name
+		ADDED from AndroidManifest.xml:11:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:14:13
+ADDED from AndroidManifest.xml:13:13
 action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:14:17
+	android:name
+		ADDED from AndroidManifest.xml:14:25
+category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:15:17
 	android:name
-		ADDED from AndroidManifest.xml:15:25
-category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:16:17
-	android:name
-		ADDED from AndroidManifest.xml:16:27
+		ADDED from AndroidManifest.xml:15:27
 activity#com.tencent.tauth.AuthActivity
-ADDED from AndroidManifest.xml:20:9
+ADDED from AndroidManifest.xml:19:9
 	android:launchMode
-		ADDED from AndroidManifest.xml:22:13
-	android:noHistory
-		ADDED from AndroidManifest.xml:23:13
-	android:name
 		ADDED from AndroidManifest.xml:21:13
+	android:noHistory
+		ADDED from AndroidManifest.xml:22:13
+	android:name
+		ADDED from AndroidManifest.xml:20:13
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:24:13
+ADDED from AndroidManifest.xml:23:13
 action#android.intent.action.VIEW
+ADDED from AndroidManifest.xml:24:17
+	android:name
+		ADDED from AndroidManifest.xml:24:25
+category#android.intent.category.DEFAULT
 ADDED from AndroidManifest.xml:25:17
 	android:name
-		ADDED from AndroidManifest.xml:25:25
-category#android.intent.category.DEFAULT
+		ADDED from AndroidManifest.xml:25:27
+category#android.intent.category.BROWSABLE
 ADDED from AndroidManifest.xml:26:17
 	android:name
 		ADDED from AndroidManifest.xml:26:27
-category#android.intent.category.BROWSABLE
-ADDED from AndroidManifest.xml:27:17
-	android:name
-		ADDED from AndroidManifest.xml:27:27
 data
-ADDED from AndroidManifest.xml:28:17
+ADDED from AndroidManifest.xml:27:17
 	android:scheme
-		ADDED from AndroidManifest.xml:28:23
+		ADDED from AndroidManifest.xml:27:23
 activity#com.liulishuo.engzo.wxapi.WXEntryActivity
-ADDED from AndroidManifest.xml:32:9
+ADDED from AndroidManifest.xml:31:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:35:17
-	android:exported
 		ADDED from AndroidManifest.xml:34:17
-	android:theme
-		ADDED from AndroidManifest.xml:36:17
-	android:name
+	android:exported
 		ADDED from AndroidManifest.xml:33:17
+	android:theme
+		ADDED from AndroidManifest.xml:35:17
+	android:name
+		ADDED from AndroidManifest.xml:32:17
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.2.0:20:5
@@ -127,23 +127,29 @@ ADDED from ShareLoginLib:share:unspecified:23:9
 		ADDED from ShareLoginLib:share:unspecified:25:13
 	android:name
 		ADDED from ShareLoginLib:share:unspecified:24:13
-activity#com.tencent.connect.common.AssistActivity
-ADDED from ShareLoginLib:share:unspecified:29:9
-	android:screenOrientation
-		ADDED from ShareLoginLib:share:unspecified:32:13
-	android:configChanges
-		ADDED from ShareLoginLib:share:unspecified:31:13
-	android:theme
-		ADDED from ShareLoginLib:share:unspecified:33:13
-	android:name
-		ADDED from ShareLoginLib:share:unspecified:30:13
-activity#com.liulishuo.share.wechat.WechatHandlerActivity
-ADDED from ShareLoginLib:share:unspecified:34:9
-	android:screenOrientation
-		ADDED from ShareLoginLib:share:unspecified:37:13
+service#com.sina.weibo.sdk.net.DownloadService
+ADDED from ShareLoginLib:share:unspecified:30:9
 	android:exported
-		ADDED from ShareLoginLib:share:unspecified:36:13
-	android:theme
-		ADDED from ShareLoginLib:share:unspecified:38:13
+		ADDED from ShareLoginLib:share:unspecified:32:13
 	android:name
-		ADDED from ShareLoginLib:share:unspecified:35:13
+		ADDED from ShareLoginLib:share:unspecified:31:13
+activity#com.tencent.connect.common.AssistActivity
+ADDED from ShareLoginLib:share:unspecified:35:9
+	android:screenOrientation
+		ADDED from ShareLoginLib:share:unspecified:38:13
+	android:configChanges
+		ADDED from ShareLoginLib:share:unspecified:37:13
+	android:theme
+		ADDED from ShareLoginLib:share:unspecified:39:13
+	android:name
+		ADDED from ShareLoginLib:share:unspecified:36:13
+activity#com.liulishuo.share.wechat.WechatHandlerActivity
+ADDED from ShareLoginLib:share:unspecified:40:9
+	android:screenOrientation
+		ADDED from ShareLoginLib:share:unspecified:43:13
+	android:exported
+		ADDED from ShareLoginLib:share:unspecified:42:13
+	android:theme
+		ADDED from ShareLoginLib:share:unspecified:44:13
+	android:name
+		ADDED from ShareLoginLib:share:unspecified:41:13
