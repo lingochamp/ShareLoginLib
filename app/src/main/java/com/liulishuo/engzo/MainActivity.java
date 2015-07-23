@@ -9,6 +9,7 @@ import com.liulishuo.share.base.share.ShareContentWebpage;
 import com.liulishuo.share.base.share.ShareStateListener;
 import com.liulishuo.share.qq.QQLoginManager;
 import com.liulishuo.share.qq.QQShareManager;
+import com.liulishuo.share.util.HttpUtil;
 import com.liulishuo.share.wechat.WechatLoginManager;
 import com.liulishuo.share.wechat.WechatShareManager;
 import com.liulishuo.share.weibo.WeiboLoginManager;
@@ -72,7 +73,22 @@ public class MainActivity extends Activity {
 
     IShareManager mCurrentShareManager;
 
+    public static final String TAG = "MainActivity";
 
+    public static final String QQ_APPID = " ";
+
+    public static final String QQ_SCOPE = " ";
+
+    public static final String WEIBO_APPID = " ";
+
+    public static final String WEIBO_SCOPE = " ";
+
+    public static final String WEIBO_REDIRECT_URL = " ";
+
+    public static final String WECHAT_APPID = " ";
+
+    public static final String WECHAT_SECRET = " ";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,11 +96,24 @@ public class MainActivity extends Activity {
 
         final View rooView = findViewById(R.id.view);
 
+        HttpUtil.doGetAsyn("http://www.baidu.com", new HttpUtil.CallBack() {
+            @Override
+            public void onRequestComplete(String result) {
+                Log.d(TAG, "onRequestComplete " + result);
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+        
+        
         ShareBlock.getInstance()
                 .initAppName("TestAppName")
-                .initQQ(OAuthConstant.QQ_APPID, OAuthConstant.QQ_SCOPE)
-                .initWechat(OAuthConstant.WECHAT_APPID, OAuthConstant.WECHAT_SECRET)
-                .initWeibo(OAuthConstant.WEIBO_APPID, OAuthConstant.WEIBO_REDIRECT_URL, OAuthConstant.WEIBO_SCOPE);
+                .initQQ(QQ_APPID, QQ_SCOPE)
+                .initWechat(WECHAT_APPID,WECHAT_SECRET)
+                .initWeibo(WEIBO_APPID, WEIBO_REDIRECT_URL, WEIBO_SCOPE);
 
         // 微信分享到回话
         findViewById(R.id.share_wechat_btn).setOnClickListener(new View.OnClickListener() {

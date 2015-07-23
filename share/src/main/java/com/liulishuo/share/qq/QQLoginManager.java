@@ -86,7 +86,6 @@ public class QQLoginManager implements ILoginManager {
             @Override
             public void onComplete(Object object) {
                 try {
-                    // TODO: 2015/7/22 补充avatarUrl
                     JSONObject jsonObject = (JSONObject) object;
                     HashMap<String, String> userInfoHashMap = new HashMap<>();
                     userInfoHashMap.put(ShareConstants.PARAMS_NICK_NAME, jsonObject.getString("nickname"));

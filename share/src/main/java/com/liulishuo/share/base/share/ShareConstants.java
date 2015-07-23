@@ -31,22 +31,22 @@ public class ShareConstants {
 
 
     /**
-     * user.nickname
+     * user.nickname 昵称
      */
     public static final String PARAMS_NICK_NAME = "nickname";
 
     /**
-     * user.gender
+     * user.gender 性别
      */
     public static final String PARAMS_SEX = "sex";
 
     /**
-     * user.avatarUrl
+     * user.avatarUrl 头像
      */
     public static final String PARAMS_IMAGEURL = "headimgurl";
 
     /**
-     * user.userId
+     * user.userId 用户id
      */
     public static final String PARAMS_USERID = "unionid";
 

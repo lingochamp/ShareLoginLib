@@ -127,29 +127,23 @@ ADDED from ShareLoginLib:share:unspecified:23:9
 		ADDED from ShareLoginLib:share:unspecified:25:13
 	android:name
 		ADDED from ShareLoginLib:share:unspecified:24:13
-service#com.sina.weibo.sdk.net.DownloadService
-ADDED from ShareLoginLib:share:unspecified:30:9
-	android:exported
-		ADDED from ShareLoginLib:share:unspecified:32:13
-	android:name
-		ADDED from ShareLoginLib:share:unspecified:31:13
 activity#com.tencent.connect.common.AssistActivity
-ADDED from ShareLoginLib:share:unspecified:35:9
+ADDED from ShareLoginLib:share:unspecified:29:9
 	android:screenOrientation
-		ADDED from ShareLoginLib:share:unspecified:38:13
+		ADDED from ShareLoginLib:share:unspecified:32:13
 	android:configChanges
-		ADDED from ShareLoginLib:share:unspecified:37:13
+		ADDED from ShareLoginLib:share:unspecified:31:13
 	android:theme
-		ADDED from ShareLoginLib:share:unspecified:39:13
+		ADDED from ShareLoginLib:share:unspecified:33:13
 	android:name
-		ADDED from ShareLoginLib:share:unspecified:36:13
+		ADDED from ShareLoginLib:share:unspecified:30:13
 activity#com.liulishuo.share.wechat.WechatHandlerActivity
-ADDED from ShareLoginLib:share:unspecified:40:9
+ADDED from ShareLoginLib:share:unspecified:34:9
 	android:screenOrientation
-		ADDED from ShareLoginLib:share:unspecified:43:13
+		ADDED from ShareLoginLib:share:unspecified:37:13
 	android:exported
-		ADDED from ShareLoginLib:share:unspecified:42:13
+		ADDED from ShareLoginLib:share:unspecified:36:13
 	android:theme
-		ADDED from ShareLoginLib:share:unspecified:44:13
+		ADDED from ShareLoginLib:share:unspecified:38:13
 	android:name
-		ADDED from ShareLoginLib:share:unspecified:41:13
+		ADDED from ShareLoginLib:share:unspecified:35:13

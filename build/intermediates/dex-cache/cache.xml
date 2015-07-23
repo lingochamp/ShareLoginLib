@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="E:\Github\ShareLoginLib\app\build\intermediates\exploded-aar\ShareLoginLib\share\unspecified\jars\classes.jar"
+        jar="E:\Github\ShareLoginLib\duitang\build\intermediates\exploded-aar\ShareLoginLib\share\unspecified\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="7aa0a14b26113bed234b188890ba89df85b37f51">
-        <dex dex="E:\Github\ShareLoginLib\app\build\intermediates\pre-dexed\debug\classes-e375be25fd2ad12f8b78f6adf1ad0f5d8ce91a77.jar" />
+        revision="23.0.0 rc2"
+        sha1="9b9e09f483912480cdab79483aa7e8236b607f2a">
+        <dex dex="E:\Github\ShareLoginLib\duitang\build\intermediates\pre-dexed\duitang\release\classes-f259d46be7fb4d10fabc4da2050cd2e13b2c6e14.jar" />
     </item>
 
 </items>

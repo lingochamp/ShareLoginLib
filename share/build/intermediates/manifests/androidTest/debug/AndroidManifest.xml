@@ -3,7 +3,7 @@
     package="com.liulishuo.share.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="8"
         android:targetSdkVersion="22" />
 
     <instrumentation
@@ -31,12 +31,6 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" >
         </activity>
-
-        <service
-            android:name="com.sina.weibo.sdk.net.DownloadService"
-            android:exported="false" >
-        </service>
-
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden"

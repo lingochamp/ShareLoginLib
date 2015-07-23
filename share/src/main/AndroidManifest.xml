@@ -18,10 +18,7 @@
                   android:windowSoftInputMode="adjustResize"
                   android:exported="false" >
         </activity>
-
-        <service android:name="com.sina.weibo.sdk.net.DownloadService"
-            android:exported="false">
-        </service>
+        
 
         <activity
                 android:name="com.tencent.connect.common.AssistActivity"

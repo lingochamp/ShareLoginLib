@@ -94,11 +94,11 @@ public class WechatLoginManager implements ILoginManager {
                         .append("/sns/oauth2/access_token")
                         .append("?appid=")
                         .append(ShareBlock.getInstance().getWechatAppId())
-                        .append("?secret=")
+                        .append("&secret=")
                         .append(ShareBlock.getInstance().getWechatSecret())
-                        .append("?code=")
+                        .append("&code=")
                         .append(((SendAuth.Resp) resp).code)
-                        .append("?grant_type=authorization_code");
+                        .append("&grant_type=authorization_code");
                 // 通过code获得access token
                 HttpUtil.doGetAsyn(builder.toString(), new HttpUtil.CallBack() {
                     @Override
@@ -144,7 +144,7 @@ public class WechatLoginManager implements ILoginManager {
         builder.append("https://api.weixin.qq.com")
                 .append("/sns/userinfo")
                 .append("?access_token=").append(mAccessToken)
-                .append("?openid").append(mOpenid);
+                .append("&openid").append(mOpenid);
         HttpUtil.doGetAsyn(builder.toString(), new HttpUtil.CallBack() {
             @Override
             public void onRequestComplete(String result) {
