@@ -83,23 +83,6 @@ public class MainActivity extends Activity {
         }
     };
 
-    public static final String QQ_APPID = "xxx";
-
-    public static final String QQ_SCOPE = "xxx,xx,"
-            + "xx,xxx,xxxx";
-
-    public static final String WEIBO_APPID = "xxx";
-
-    public static final String WEIBO_SCOPE =
-            "xx,xxx,xxx,"
-                    + "xx";
-
-    public static final String WEIBO_REDIRECT_URL = "http://xxxx/";
-
-    public static final String WECHAT_APPID = "xxxx";
-
-    public static final String WECHAT_SECRET = "xxxx";
-
     QQLoginManager mQQLoginManager;
 
     QQShareManager qqShareManager;
@@ -116,9 +99,9 @@ public class MainActivity extends Activity {
 
         ShareBlock.getInstance()
                 .initAppName("TestApp")
-                .initQQ(QQ_APPID, QQ_SCOPE)
-                .initWechat(WECHAT_APPID, WECHAT_SECRET)
-                .initWeibo(WEIBO_APPID, WEIBO_REDIRECT_URL, WEIBO_SCOPE);
+                .initQQ(OAuthConstant.QQ_APPID, OAuthConstant.QQ_SCOPE)
+                .initWechat(OAuthConstant.WECHAT_APPID, OAuthConstant.WECHAT_SECRET)
+                .initWeibo(OAuthConstant.WEIBO_APPID, OAuthConstant.WEIBO_REDIRECT_URL, OAuthConstant.WEIBO_SCOPE);
 
         findViewById(R.id.share_wechat_btn).setOnClickListener(new View.OnClickListener() {
             @Override
