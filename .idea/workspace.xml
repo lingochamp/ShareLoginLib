@@ -12,72 +12,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ab38c93-e870-44bd-9529-c8d9f9e801d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/wechat/WechatLoginManager$2.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/wechat/WechatLoginManager$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/wechat/WechatLoginManager$2.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/wechat/WechatLoginManager$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/wechat/WechatLoginManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/wechat/WechatLoginManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/wechat/WechatLoginManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/wechat/WechatLoginManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboLoginManager$1.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboLoginManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboLoginManager$1.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboLoginManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboLoginManager$AuthLoginListener.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboLoginManager$AuthLoginListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboLoginManager$AuthLoginListener.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboLoginManager$AuthLoginListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboLoginManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboLoginManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboLoginManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboLoginManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboShareManager$1.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboShareManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboShareManager$1.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboShareManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboShareManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/weibo/WeiboShareManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboShareManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/weibo/WeiboShareManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/classes-e375be25fd2ad12f8b78f6adf1ad0f5d8ce91a77.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/classes-e375be25fd2ad12f8b78f6adf1ad0f5d8ce91a77.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/jars/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/release/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/share/build/intermediates/resources/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/outputs/aar/share-debug.aar" afterPath="$PROJECT_DIR$/share/build/outputs/aar/share-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/outputs/aar/share-release.aar" afterPath="$PROJECT_DIR$/share/build/outputs/aar/share-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/share/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/share/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/liulishuo/engzo/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/liulishuo/engzo/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/qq/QQLoginManager.java" afterPath="$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/qq/QQLoginManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/base/share/ShareConstants.java" afterPath="$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/base/share/ShareConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/wechat/WechatLoginManager.java" afterPath="$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/wechat/WechatLoginManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build.gradle" afterPath="$PROJECT_DIR$/share/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\Github\ShareLoginLib\app\build\intermediates\classes\debug\com\liulishuo\engzo\MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$5.class" />
-      <change type="MOVED" beforePath="E:\Github\ShareLoginLib\app\build\intermediates\classes\debug\com\liulishuo\engzo\MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$6.class" />
-      <change type="MOVED" beforePath="E:\Github\ShareLoginLib\app\build\intermediates\classes\debug\com\liulishuo\engzo\MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$8.class" />
-      <change type="MOVED" beforePath="E:\Github\ShareLoginLib\app\build\intermediates\classes\debug\com\liulishuo\engzo\MainActivity$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/liulishuo/engzo/MainActivity$9.class" />
-    </list>
+    <list default="true" id="1ab38c93-e870-44bd-9529-c8d9f9e801d9" name="Default" comment="" />
     <ignored path="ShareLoginLib.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -148,21 +83,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0333333">
-              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.9155767">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QQLoginManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QQLoginManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/qq/QQLoginManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47990814">
-              <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -188,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WXEntryActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/duitang/src/main/java/com/duitang/main/wxapi/WXEntryActivity.java">
+      <file leaf-file-name="WechatLoginManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/wechat/WechatLoginManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+              <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -3819,6 +3754,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareLoginLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareLoginLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="share" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="share" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="qq" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -4558,14 +4527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/wechat/WechatLoginManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/share/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4726,10 +4687,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/base/share/ShareConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0333333">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/qq/QQLoginManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -4742,18 +4711,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/base/share/ShareConstants.java">
+    <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/wechat/WechatLoginManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/share/src/main/java/com/liulishuo/share/qq/QQLoginManager.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47990814">
-          <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.9155767">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding />
         </state>
       </provider>
