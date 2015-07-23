@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">asher</string>
-    <string name="share_cancel">分享取消</string>
-    <string name="share_success">分享成功</string>
-    <string name="share_failed">分享失败</string>
     <string name="share_pic_empty">图片不能为空</string>
     <string name="share_install_wechat_tips">请安装微信哦~</string>
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\Github\ShareLoginLib\app\build\intermediates\exploded-aar\ShareLoginLib\share\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5474115f3be2df69d7c637ab051bfd4eb19a06d0">
+        <dex dex="E:\Github\ShareLoginLib\app\build\intermediates\pre-dexed\debug\classes-e375be25fd2ad12f8b78f6adf1ad0f5d8ce91a77.jar" />
+    </item>
+
+</items>

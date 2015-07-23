@@ -1,9 +1,10 @@
 package com.liulishuo.share.qq;
 
 import com.liulishuo.share.ShareBlock;
-import com.liulishuo.share.data.ShareConstants;
-import com.liulishuo.share.model.ILoginManager;
-import com.liulishuo.share.model.PlatformActionListener;
+import com.liulishuo.share.base.login.GetUserListener;
+import com.liulishuo.share.base.login.ILoginManager;
+import com.liulishuo.share.base.login.LoginListener;
+import com.liulishuo.share.base.share.ShareConstants;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.common.Constants;
 import com.tencent.tauth.IUiListener;
@@ -14,7 +15,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import java.util.HashMap;
@@ -24,122 +26,100 @@ import java.util.HashMap;
  */
 public class QQLoginManager implements ILoginManager {
 
-
-    private Context mContext;
-
-    private String mAppId;
+    private Activity mActivity;
 
     private Tencent mTencent;
 
-    protected PlatformActionListener mPlatformActionListener;
-
-
-    public QQLoginManager(Context context) {
-        mContext = context;
-        mAppId = ShareBlock.getInstance().getQQAppId();
-        if (!TextUtils.isEmpty(mAppId)) {
-            mTencent = Tencent.createInstance(mAppId, context);
+    public QQLoginManager(Activity activity) {
+        mActivity = activity;
+        String appId = ShareBlock.getInstance().getQQAppId();
+        if (!TextUtils.isEmpty(appId)) {
+            mTencent = Tencent.createInstance(appId, activity);
         }
     }
 
-
     private void initOpenidAndToken(JSONObject jsonObject) {
         try {
+            String openId = jsonObject.getString(Constants.PARAM_OPEN_ID);
             String token = jsonObject.getString(Constants.PARAM_ACCESS_TOKEN);
             String expires = jsonObject.getString(Constants.PARAM_EXPIRES_IN);
-            String openId = jsonObject.getString(Constants.PARAM_OPEN_ID);
-            if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(expires)
-                    && !TextUtils.isEmpty(openId)) {
+            if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(expires) && !TextUtils.isEmpty(openId)) {
                 mTencent.setAccessToken(token, expires);
                 mTencent.setOpenId(openId);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-
     @Override
-    public void login(PlatformActionListener platformActionListener) {
+    public void login(final @NonNull LoginListener loginListener) {
         if (!mTencent.isSessionValid()) {
-
-            mPlatformActionListener = platformActionListener;
-            mTencent.login((Activity) mContext, "all", new IUiListener() {
+            mTencent.login(mActivity, ShareBlock.getInstance().getQQScope(), new IUiListener() {
                 @Override
                 public void onComplete(Object object) {
-                    JSONObject jsonObject = (JSONObject) object;
-                    initOpenidAndToken(jsonObject);
-                    UserInfo info = new UserInfo(mContext, mTencent.getQQToken());
-                    info.getUserInfo(new IUiListener() {
-                        @Override
-                        public void onComplete(Object object) {
-
-                            try {
-                                JSONObject jsonObject = (JSONObject) object;
-                                HashMap<String, Object> userInfoHashMap
-                                        = new HashMap<String, Object>();
-                                userInfoHashMap.put(ShareConstants.PARAMS_NICK_NAME,
-                                        jsonObject.getString("nickname"));
-                                userInfoHashMap.put(ShareConstants.PARAMS_SEX,
-                                        jsonObject.getString("gender"));
-                                userInfoHashMap.put(ShareConstants.PARAMS_IMAGEURL,
-                                        jsonObject.getString("figureurl_qq_2"));
-                                userInfoHashMap
-                                        .put(ShareConstants.PARAMS_USERID, mTencent.getOpenId());
-
-                                if (mPlatformActionListener != null) {
-                                    mPlatformActionListener
-                                            .onComplete(userInfoHashMap);
-                                }
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                                if (mPlatformActionListener != null) {
-                                    mPlatformActionListener
-                                            .onError();
-                                }
-                            }
-
-
-                        }
-
-                        @Override
-                        public void onError(UiError uiError) {
-                            if (mPlatformActionListener != null) {
-                                mPlatformActionListener
-                                        .onError();
-                            }
-                        }
-
-                        @Override
-                        public void onCancel() {
-                            if (mPlatformActionListener != null) {
-                                mPlatformActionListener
-                                        .onCancel();
-                            }
-                        }
-                    });
+                    JSONObject jsonObject = (JSONObject) object; // qq_json
+                    initOpenidAndToken(jsonObject); // 初始化id和access token
+                    loginListener.onLoginComplete(mTencent.getOpenId(), mTencent.getAccessToken(), mTencent.getExpiresIn());
                 }
 
                 @Override
                 public void onError(UiError uiError) {
-                    if (mPlatformActionListener != null) {
-                        mPlatformActionListener
-                                .onError();
-                    }
+                    loginListener.onError(uiError.errorCode + " - " + uiError.errorMessage + " - " + uiError.errorDetail);
                 }
 
                 @Override
                 public void onCancel() {
-                    if (mPlatformActionListener != null) {
-                        mPlatformActionListener
-                                .onCancel();
-                    }
+                    loginListener.onCancel();
                 }
             });
-
         } else {
-            mTencent.logout(mContext);
+            mTencent.logout(mActivity);
         }
+    }
+
+    @Override
+    public void getUserInfo(final @NonNull GetUserListener listener) {
+        UserInfo info = new UserInfo(mActivity, mTencent.getQQToken());
+        // 执行获取用户信息的操作
+        info.getUserInfo(new IUiListener() {
+            @Override
+            public void onComplete(Object object) {
+                try {
+                    // TODO: 2015/7/22 补充avatarUrl
+                    JSONObject jsonObject = (JSONObject) object;
+                    HashMap<String, String> userInfoHashMap = new HashMap<>();
+                    userInfoHashMap.put(ShareConstants.PARAMS_NICK_NAME, jsonObject.getString("nickname"));
+                    userInfoHashMap.put(ShareConstants.PARAMS_SEX, jsonObject.getString("gender"));
+                    userInfoHashMap.put(ShareConstants.PARAMS_IMAGEURL, jsonObject.getString("figureurl_qq_2"));
+                    userInfoHashMap.put(ShareConstants.PARAMS_USERID, mTencent.getOpenId());
+                    listener.onComplete(userInfoHashMap);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    listener.onError("userInfo data error");
+                }
+            }
+
+            @Override
+            public void onError(UiError uiError) {
+                listener.onError(uiError.errorCode + " - " + uiError.errorMessage + " - " + uiError.errorDetail);
+            }
+
+            @Override
+            public void onCancel() {
+                listener.onCancel();
+            }
+        });
+    }
+
+    public void handlerOnActivityResult(int requestCode, int resultCode, Intent data) {
+        if (mTencent != null) {
+            mTencent.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    public Tencent getTencent() {
+        return mTencent;
     }
 }
 
