@@ -13,21 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ab38c93-e870-44bd-9529-c8d9f9e801d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/wechat/WechatLoginManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/debug/com/liulishuo/share/wechat/WechatLoginManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/wechat/WechatLoginManager.class" afterPath="$PROJECT_DIR$/share/build/intermediates/classes/release/com/liulishuo/share/wechat/WechatLoginManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/ShareLoginLib/share/unspecified/jars/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/share/build/intermediates/bundles/release/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/outputs/aar/share-debug.aar" afterPath="$PROJECT_DIR$/share/build/outputs/aar/share-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/share/build/outputs/aar/share-release.aar" afterPath="$PROJECT_DIR$/share/build/outputs/aar/share-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="DELETED" beforePath="E:\Github\ShareLoginLib\.gitignore.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ShareLoginLib.iws" />
