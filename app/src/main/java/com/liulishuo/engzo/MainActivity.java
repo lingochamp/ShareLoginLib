@@ -83,7 +83,22 @@ public class MainActivity extends Activity {
         }
     };
 
-    
+    public static final String QQ_APPID = "xxx";
+
+    public static final String QQ_SCOPE = "xxx,xx,"
+            + "xx,xxx,xxxx";
+
+    public static final String WEIBO_APPID = "xxx";
+
+    public static final String WEIBO_SCOPE =
+            "xx,xxx,xxx,"
+                    + "xx";
+
+    public static final String WEIBO_REDIRECT_URL = "http://xxxx/";
+
+    public static final String WECHAT_APPID = "xxxx";
+
+    public static final String WECHAT_SECRET = "xxxx";
 
     QQLoginManager mQQLoginManager;
 
