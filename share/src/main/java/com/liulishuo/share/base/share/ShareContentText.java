@@ -1,20 +1,22 @@
 package com.liulishuo.share.base.share;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by echo on 5/18/15.
  * 分享文本内容
  */
 public class ShareContentText extends ShareContent {
 
-    private String content;
+    private String summary;
 
-    public ShareContentText(String content) {
-        this.content = content;
+    public ShareContentText(String summary) {
+        this.summary = summary;
     }
 
     @Override
-    public String getContent() {
-        return content;
+    public String getSummary() {
+        return summary;
     }
 
     @Override
@@ -29,6 +31,11 @@ public class ShareContentText extends ShareContent {
 
     @Override
     public String getImageUrl() {
+        return null;
+    }
+
+    @Override
+    public Bitmap getImageBmp() {
         return null;
     }
 

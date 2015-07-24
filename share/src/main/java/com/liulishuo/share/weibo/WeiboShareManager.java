@@ -1,15 +1,14 @@
 package com.liulishuo.share.weibo;
 
 import com.liulishuo.share.ShareBlock;
-import com.liulishuo.share.base.share.ShareConstants;
 import com.liulishuo.share.base.share.IShareManager;
-import com.liulishuo.share.base.share.ShareStateListener;
+import com.liulishuo.share.base.share.ShareConstants;
 import com.liulishuo.share.base.share.ShareContent;
+import com.liulishuo.share.base.share.ShareStateListener;
 import com.liulishuo.share.util.ShareUtil;
 import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.MusicObject;
 import com.sina.weibo.sdk.api.TextObject;
-import com.sina.weibo.sdk.api.WebpageObject;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
 import com.sina.weibo.sdk.api.share.SendMultiMessageToWeiboRequest;
@@ -63,7 +62,7 @@ public class WeiboShareManager implements IShareManager {
     private void shareText(ShareContent shareContent) {
         //初始化微博的分享消息
         WeiboMultiMessage weiboMultiMessage = new WeiboMultiMessage();
-        weiboMultiMessage.textObject = getTextObj(shareContent.getContent());
+        weiboMultiMessage.textObject = getTextObj(shareContent.getSummary());
         //初始化从第三方到微博的消息请求
         SendMultiMessageToWeiboRequest request = new SendMultiMessageToWeiboRequest();
         request.transaction = ShareUtil.buildTransaction("sinatext");
@@ -73,7 +72,7 @@ public class WeiboShareManager implements IShareManager {
 
     private void sharePicture(ShareContent shareContent) {
         WeiboMultiMessage weiboMultiMessage = new WeiboMultiMessage();
-        weiboMultiMessage.imageObject = getImageObj(shareContent.getImageUrl());
+        weiboMultiMessage.imageObject = getImageObj(shareContent);
         //初始化从第三方到微博的消息请求
         SendMultiMessageToWeiboRequest request = new SendMultiMessageToWeiboRequest();
         request.transaction = ShareUtil.buildTransaction("sinapic");
@@ -83,8 +82,8 @@ public class WeiboShareManager implements IShareManager {
 
     private void shareWebPage(ShareContent shareContent) {
         WeiboMultiMessage weiboMultiMessage = new WeiboMultiMessage();
-        weiboMultiMessage.textObject = getTextObj(shareContent.getContent());
-        weiboMultiMessage.imageObject = getImageObj(shareContent.getImageUrl());
+        weiboMultiMessage.textObject = getTextObj(shareContent.getSummary());
+        weiboMultiMessage.imageObject = getImageObj(shareContent);
         // 初始化从第三方到微博的消息请求
         SendMultiMessageToWeiboRequest request = new SendMultiMessageToWeiboRequest();
         // 用transaction唯一标识一个请求
@@ -119,30 +118,28 @@ public class WeiboShareManager implements IShareManager {
      *
      * @return 图片消息对象。
      */
-    private ImageObject getImageObj(String imageUrl) {
+    private ImageObject getImageObj(ShareContent content) {
+        String imageUrl = content.getImageUrl();
+        Bitmap imageBmp = content.getImageBmp();
+        Bitmap shareBmp = null;
+        if (imageBmp != null) {
+            shareBmp = imageBmp;
+        }
+        
+        // 尝试加载本地图片
+        if (imageUrl != null) {
+            if (imageUrl.indexOf("http") == 0) {
+                throw new NullPointerException("imageUrl is not a file path,you should use imageBmp instead of imageUrl");
+            }
+            shareBmp = BitmapFactory.decodeFile(imageUrl);
+            if (shareBmp == null) {
+                throw new NullPointerException("imageUrl is not a file path,you should use imageBmp instead of imageUrl");
+            }
+        }
+        
         ImageObject imageObject = new ImageObject();
-        Bitmap bmp = BitmapFactory.decodeFile(imageUrl);
-        imageObject.setImageObject(bmp);
+        imageObject.setImageObject(shareBmp);
         return imageObject;
-    }
-
-    /**
-     * 创建多媒体（网页）消息对象。
-     *
-     * @return 多媒体（网页）消息对象。
-     */
-    private WebpageObject getWebpageObj(ShareContent shareContent) {
-        WebpageObject mediaObject = new WebpageObject();
-        mediaObject.identify = Utility.generateGUID();
-        mediaObject.title = shareContent.getTitle();
-        mediaObject.description = shareContent.getContent();
-
-        // 设置 Bitmap 类型的图片到视频对象里
-        Bitmap bmp = ShareUtil.extractThumbNail(shareContent.getImageUrl(), 150, 150, true);
-        mediaObject.setThumbImage(bmp);
-        mediaObject.actionUrl = shareContent.getURL();
-        mediaObject.defaultText = shareContent.getContent();
-        return mediaObject;
     }
 
     /**
@@ -155,7 +152,7 @@ public class WeiboShareManager implements IShareManager {
         MusicObject musicObject = new MusicObject();
         musicObject.identify = Utility.generateGUID();
         musicObject.title = shareContent.getTitle();
-        musicObject.description = shareContent.getContent();
+        musicObject.description = shareContent.getSummary();
 
         // 设置 Bitmap 类型的图片到视频对象里
         Bitmap bmp = BitmapFactory.decodeFile(shareContent.getImageUrl());
@@ -164,7 +161,7 @@ public class WeiboShareManager implements IShareManager {
         musicObject.dataUrl = mRedirectUrl;
         musicObject.dataHdUrl = mRedirectUrl;
         musicObject.duration = 10;
-        musicObject.defaultText = shareContent.getContent();
+        musicObject.defaultText = shareContent.getSummary();
         return musicObject;
     }
 

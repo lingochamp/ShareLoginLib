@@ -80,7 +80,7 @@ public class QQShareManager implements IShareManager {
             // 分享的是图文
             params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
             params.putString(QQShare.SHARE_TO_QQ_TITLE, shareContent.getTitle());
-            params.putString(QQShare.SHARE_TO_QQ_SUMMARY, shareContent.getContent());
+            params.putString(QQShare.SHARE_TO_QQ_SUMMARY, shareContent.getSummary());
             params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, shareContent.getURL());
             params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, shareContent.getImageUrl());
         } 
@@ -102,6 +102,8 @@ public class QQShareManager implements IShareManager {
      * （注：图片最多支持9张图片，多余的图片会被丢弃）。
      *
      * 注意:QZone接口暂不支持发送多张图片的能力，若传入多张图片，则会自动选入第一张图片作为预览图。多图的能力将会在以后支持。
+     * 
+     * 如果分享的图片url是本地的图片地址那么在分享时会显示图片，如果分享的是图片的网址，那么就不会在分享时显示图片
      */
     public void shareToQzone(Activity activity, ShareContent content) {
         /*params.putString(QzoneShare.SHARE_TO_QQ_KEY_TYPE,SHARE_TO_QZONE_TYPE_IMAGE_TEXT );
@@ -113,7 +115,7 @@ public class QQShareManager implements IShareManager {
         final Bundle params = new Bundle();
         params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT);
         params.putString(QzoneShare.SHARE_TO_QQ_TITLE, content.getTitle());
-        params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, content.getContent());
+        params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, content.getSummary());
         params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL, content.getURL());
         ArrayList<String> imageUrls = new ArrayList<>();
         imageUrls.add(content.getImageUrl());
