@@ -16,7 +16,6 @@
 
 package com.liulishuo.share.weibo;
 
-
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 
 import android.content.Context;
