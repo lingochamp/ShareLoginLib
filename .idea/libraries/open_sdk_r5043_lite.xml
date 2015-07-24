@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="open_sdk_r5043_lite">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/share/libs/open_sdk_r5043_lite.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

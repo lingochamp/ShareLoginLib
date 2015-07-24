@@ -1,64 +1,94 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:paddingLeft="@dimen/activity_horizontal_margin"
-              android:paddingRight="@dimen/activity_horizontal_margin"
-              android:paddingTop="@dimen/activity_vertical_margin"
-              android:paddingBottom="@dimen/activity_vertical_margin"
-              tools:context=".MainActivity"
-              android:orientation="vertical"
-        >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    >
 
 
     <Button
-            android:id="@+id/login_wechat_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="微信登录"/>
-
-
-    <Button
-            android:id="@+id/login_weibo_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="微博登录"/>
-
+        android:id="@+id/login_wechat_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="微信登录"
+        />
 
     <Button
-            android:id="@+id/login_qzone_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="QQ登录"/>
+        android:id="@+id/share_wechat_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="分享到微信"
+        />
 
     <Button
-            android:id="@+id/share_wechat_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="分享到微信"/>
+        android:id="@+id/share_friends_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="分享到微信朋友圈"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-----------------------------------------------"
+        />
 
     <Button
-            android:id="@+id/share_friends_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="分享到朋友圈"/>
+        android:id="@+id/login_weibo_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="微博登录"
+        />
 
     <Button
-            android:id="@+id/share_weibo_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="分享到微博"/>
+        android:id="@+id/share_weibo_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="分享到微博"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-----------------------------------------------"
+        />
 
     <Button
-            android:id="@+id/share_qZone_btn"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:text="分享到QQ空间"/>
+        android:id="@+id/login_qq_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="QQ登录"
+        />
+
+    <Button
+        android:id="@+id/share_qZone_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="分享到QQ空间"
+        />
+
+    <Button
+        android:id="@+id/share_qq_friend_btn"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="分享给QQ好友"
+        />
 
 
-    <View
-            android:id="@+id/view"
-            android:background="@color/background_material_dark"
-            android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Test"
+        android:textSize="60sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="@color/background_material_dark"
+        />
 
 </LinearLayout>
