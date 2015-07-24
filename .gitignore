@@ -1,6 +1,7 @@
+app/mirror/
+app/build/
 duitang/
-*.class
-.idea/workspace.xml
+
 .gradle
 /local.properties
 /.idea/workspace.xml
