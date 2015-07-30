@@ -1,0 +1,12 @@
+*~
+.DS_Store
+*.orig
+*.class
+out/
+gen
+.idea/
+bin/
+*.iml
+.project
+local.properties
+*/build
