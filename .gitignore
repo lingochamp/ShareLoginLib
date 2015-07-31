@@ -1,10 +1,9 @@
-app/mirror/
-app/build/
-duitang/
-
 .gradle
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
 /build
+/captures
+app/mirror/
+duitang/

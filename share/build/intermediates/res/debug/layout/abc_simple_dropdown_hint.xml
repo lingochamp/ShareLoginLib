@@ -20,4 +20,4 @@
           android:singleLine="true"
           android:layout_margin="3dip"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content" /><!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/lmp-mr1-supportlib-release/frameworks/support/v7/appcompat/res/layout/abc_simple_dropdown_hint.xml --><!-- From: file:/E:/Github/ShareLoginLib/share/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/layout/abc_simple_dropdown_hint.xml -->
+          android:layout_height="wrap_content" /><!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/lmp-mr1-supportlib-release/frameworks/support/v7/appcompat/res/layout/abc_simple_dropdown_hint.xml --><!-- From: file:/E:/Github/ShareLoginLib/share/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_simple_dropdown_hint.xml -->

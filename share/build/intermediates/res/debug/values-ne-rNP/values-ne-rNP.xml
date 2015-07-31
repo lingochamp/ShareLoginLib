@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/Github/ShareLoginLib/share/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-ne-rNP/values-ne-rNP.xml -->
+    <!-- From: file:/E:/Github/ShareLoginLib/share/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-ne-rNP/values-ne-rNP.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"गृह खोज्नुहोस्"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"माथि खोज्नुहोस्"</string>

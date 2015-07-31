@@ -2,11 +2,67 @@
 <items version="2" >
 
     <item
-        jar="E:\Github\ShareLoginLib\app\build\intermediates\exploded-aar\ShareLoginLib\share\unspecified\jars\classes.jar"
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="c02059d21ae80d54e73dc70d7fd3c9c391a2877c">
-        <dex dex="E:\Github\ShareLoginLib\app\build\intermediates\pre-dexed\debug\classes-e375be25fd2ad12f8b78f6adf1ad0f5d8ce91a77.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\classes-8d8dd718c0fedb30d122cf98cff38c70b19abb3e.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\classes-45b94b7efd03b4b7eafc535be83776712d6292cb.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\ShareSDK2\share\unspecified\jars\libs\open_sdk_r5043_lite.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1f213f03dfe8868d0b24898234f6eefb67015a4a">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\open_sdk_r5043_lite-a38a5578c9f9d332b70514e815ea5626e9ca370e.jar" />
+    </item>
+    <item
+        jar="H:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\support-annotations-22.2.1-7b220b25c6cf9f030e43747589db4de8469ccddd.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\internal_impl-22.2.1-5b786c6568f27ae6fac6b0fec81f7042c16bc103.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\ShareSDK2\share\unspecified\jars\libs\libammsdk.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="47f4993168154fa73377d7470b9f6887d48a8023">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\libammsdk-970c54decedb1bc1a03bd6d0bf3bd6d7dec17c1f.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\ShareSDK2\share\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="67b34515d607165db2b191ba05d49b89696d7e48">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\classes-3fc6b779d527ab3bff75294a440303006649eeed.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\ShareSDK2\share\unspecified\jars\libs\mta-sdk-1.6.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c184c69f43b1fe46390f7123717c65bd844bccb6">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\mta-sdk-1.6.2-853b0f07981701cb97f8453d0e1991d830635ba9.jar" />
+    </item>
+    <item
+        jar="E:\Github\ShareSDK2\duitang\build\intermediates\exploded-aar\ShareSDK2\share\unspecified\jars\libs\weibosdkcore_v3.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97d3bda92040cc86699c1c4793d67c7235637386">
+        <dex dex="E:\Github\ShareSDK2\duitang\build\intermediates\pre-dexed\duitang\release\weibosdkcore_v3.1.1-540eb7a63d18b5dffb346bfa799a5e2429b379a0.jar" />
     </item>
 
 </items>

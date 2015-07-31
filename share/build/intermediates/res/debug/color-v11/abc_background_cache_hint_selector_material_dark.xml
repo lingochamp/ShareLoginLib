@@ -18,4 +18,4 @@
     <item android:state_accelerated="false" android:color="@color/background_material_dark" />
     <item android:color="@android:color/transparent" />
 </selector>
-<!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/lmp-mr1-supportlib-release/frameworks/support/v7/appcompat/res/color-v11/abc_background_cache_hint_selector_material_dark.xml --><!-- From: file:/E:/Github/ShareLoginLib/share/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/color-v11/abc_background_cache_hint_selector_material_dark.xml -->
+<!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/lmp-mr1-supportlib-release/frameworks/support/v7/appcompat/res/color-v11/abc_background_cache_hint_selector_material_dark.xml --><!-- From: file:/E:/Github/ShareLoginLib/share/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/color-v11/abc_background_cache_hint_selector_material_dark.xml -->

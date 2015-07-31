@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/Github/ShareLoginLib/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-sr/values-sr.xml -->
+    <!-- From: file:/E:/Github/ShareLoginLib/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-sr/values-sr.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Одлазак на Почетну"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Кретање нагоре"</string>
