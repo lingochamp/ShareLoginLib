@@ -1,4 +1,4 @@
-package com.example.kale.sharesdk;
+package com.liulishuo.engzo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
