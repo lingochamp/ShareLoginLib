@@ -5,8 +5,14 @@ buildscript {
         jcenter()
     }
     dependencies {
+<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:1.2.3'
 
+=======
+        classpath 'com.android.tools.build:gradle:1.1.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+>>>>>>> 8d4e7b414b4d7c26e83640521c7897d288cea4fb
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
