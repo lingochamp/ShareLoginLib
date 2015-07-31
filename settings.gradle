@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 include ':app',':share',':duitang'
-=======
-include ':app', ':share'
->>>>>>> 8d4e7b414b4d7c26e83640521c7897d288cea4fb
