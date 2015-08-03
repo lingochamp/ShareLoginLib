@@ -35,7 +35,7 @@ public abstract class AbsOpenAPI {
     private static final String TAG = AbsOpenAPI.class.getName();
     
     /** 访问微博服务接口的地址 */
-    protected static final String API_SERVER       = "https://api.weibo.com/2";
+    public static final String API_SERVER       = "https://api.weibo.com/2";
     /** POST 请求方式 */
     protected static final String HTTPMETHOD_POST  = "POST";
     /** GET 请求方式 */

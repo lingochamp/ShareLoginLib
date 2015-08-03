@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 9
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -20,15 +20,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.netflix.rxjava:rxjava-core:0.20.7'
-    compile 'com.netflix.rxjava:rxjava-android:0.20.7'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
-    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
 
 }
 
+/*
 
 
 // 根节点添加
@@ -94,8 +90,10 @@ task javadoc(type: Javadoc) {
                     links "http://docs.oracle.com/javase/7/docs/api/"
                     linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
                 }
-                exclude '**/BuildConfig.java'
-                exclude '**/R.java'
+                exclude '**//*
+BuildConfig.java'
+                exclude '**//*
+R.java'
             }
             task("javadoc${variant.name.capitalize()}Jar", type: Jar, dependsOn: "generate${variant.name.capitalize()}Javadoc") {
                 classifier = 'javadoc'
@@ -149,5 +147,6 @@ bintray {
 
 
 
+*/
 
 

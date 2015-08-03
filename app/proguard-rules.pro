@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+# ————————  微信 start    ————————
+-keep class com.tencent.mm.sdk.** {
+   *;
+}
+# ————————  微信 end    ————————

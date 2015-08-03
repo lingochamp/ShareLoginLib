@@ -15,3 +15,4 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep interface com.liulishuo.share.base.**{*;}

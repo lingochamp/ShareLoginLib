@@ -1,1 +1,1 @@
-include ':app', ':share'
+include ':app',':share',':duitang'
