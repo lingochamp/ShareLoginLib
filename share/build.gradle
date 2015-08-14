@@ -36,7 +36,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 // 根节点添加
-version = "0.3"
+version = "0.4"
 def siteUrl = 'https://github.com/echodjb/ShareLoginLib'    // project homepage
 def gitUrl = 'https://github.com/echodjb/ShareLoginLib.git' // project git
 

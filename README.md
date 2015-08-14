@@ -5,7 +5,7 @@ ShareLoginLib likes simple sharesdk or umeng in China . It is a tool to help dev
 -------------------------
 
 ```groovy
-compile 'com.echodjb.shareloginlib:share:0.3'
+compile 'com.echodjb.shareloginlib:share:0.4'
 ```
 
 

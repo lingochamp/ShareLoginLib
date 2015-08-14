@@ -32,7 +32,7 @@ import rx.schedulers.Schedulers;
 /**
  * Created by echo on 5/19/15.
  *
- * 参考文档:https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317853&lang=zh_CN
+ *
  */
 public class WechatHandlerActivity extends Activity implements IWXAPIEventHandler {
 
