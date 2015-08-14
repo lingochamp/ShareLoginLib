@@ -1,255 +1,214 @@
 package com.liulishuo.engzo;
 
 import com.liulishuo.share.ShareBlock;
-import com.liulishuo.share.base.login.GetUserListener;
-import com.liulishuo.share.base.login.ILoginManager;
-import com.liulishuo.share.base.login.LoginListener;
-import com.liulishuo.share.base.share.IShareManager;
-import com.liulishuo.share.base.share.ShareContentWebpage;
-import com.liulishuo.share.base.share.ShareStateListener;
+import com.liulishuo.share.model.ILoginManager;
+import com.liulishuo.share.model.IShareManager;
+import com.liulishuo.share.model.PlatformActionListener;
+import com.liulishuo.share.model.ShareContentText;
+import com.liulishuo.share.model.ShareContentWebpage;
 import com.liulishuo.share.qq.QQLoginManager;
 import com.liulishuo.share.qq.QQShareManager;
 import com.liulishuo.share.wechat.WechatLoginManager;
 import com.liulishuo.share.wechat.WechatShareManager;
 import com.liulishuo.share.weibo.WeiboLoginManager;
 import com.liulishuo.share.weibo.WeiboShareManager;
+import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.HashMap;
 
-/**
- * 步骤：
- * 1.添加混淆参数
- * 2.在包中放入微信必须的activity
- * 3.配置manifest中的activity
- *
- * 分享：
- * 1.qq支持本地图片地址+图片url
- * 2.weibo支持bitmap和本地图片（但不推荐使用本地图片的url形式）
- * 3.wechat支持bitmap
- */
-public class MainActivity extends AppCompatActivity {
 
-    private ILoginManager mCurrentLoginManager;
+public class MainActivity extends ActionBarActivity {
 
-    private IShareManager mCurrentShareManager;
+    private SsoHandler mSsoHandler;
 
-    public static final String TAG = "MainActivity";
-
-    Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "onCreate " + WechatLoginManager.isWetchatInstalled(this));
-
-        Drawable drawable = getResources().getDrawable(R.drawable.kale);
-        bitmap = ((BitmapDrawable) drawable).getBitmap();
-
         final View rooView = findViewById(R.id.view);
+        
+        ShareBlock.getInstance().initShare(" ", " ", "",
+                "");
 
-        // 初始化字段，这里可以放在application中配置
-       /* ShareBlock.getInstance()
-                .initAppName("TestAppName")
-                .initQQ(OAuthConstant.QQ_APPID, OAuthConstant.QQ_SCOPE)
-                .initWechat(OAuthConstant.WECHAT_APPID, OAuthConstant.WECHAT_SECRET)
-                .initWeibo(OAuthConstant.WEIBO_APPID, OAuthConstant.WEIBO_REDIRECT_URL, OAuthConstant.WEIBO_SCOPE);*/
-
-        // 微信分享到回话
         findViewById(R.id.share_wechat_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCurrentShareManager = new WechatShareManager(MainActivity.this);
-                mCurrentShareManager.share(
-                        new ShareContentWebpage("", "hello", "http://www.liulishuo.com", bitmap),
-                        WechatShareManager.WEIXIN_SHARE_TYPE_TALK
-                        , mShareListener);
+
+                IShareManager iShareManager = new WechatShareManager(MainActivity.this);
+                iShareManager
+                        .share(new ShareContentWebpage("", "hello", "http://www.liulishuo.com",
+                                        getImagePath(rooView)),
+                                WechatShareManager.WEIXIN_SHARE_TYPE_TALK);
+
             }
         });
 
-        // 微信分享到朋友圈
         findViewById(R.id.share_friends_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCurrentShareManager = new WechatShareManager(MainActivity.this);
-                mCurrentShareManager.share(
-                        new ShareContentWebpage("hello", "", "http://www.liulishuo.com", bitmap)
-                        , WechatShareManager.WEIXIN_SHARE_TYPE_FRENDS
-                        , mShareListener);
-            }
-        });
 
-        // 微信登录
-        findViewById(R.id.login_wechat_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCurrentLoginManager = new WechatLoginManager(MainActivity.this);
-                mCurrentLoginManager.login(mLoginListener);
-            }
-        });
+                IShareManager iShareManager = new WechatShareManager(MainActivity.this);
+                iShareManager.share(
+                        new ShareContentWebpage("hello", "", "http://www.liulishuo.com",
+                                getImagePath(rooView)),
+                        WechatShareManager.WEIXIN_SHARE_TYPE_FRENDS);
 
-        ///////////////////////////// Weibo ///////////////////////////////
-
-        findViewById(R.id.login_weibo_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCurrentLoginManager = new WeiboLoginManager(MainActivity.this);
-                mCurrentLoginManager.login(mLoginListener);
             }
         });
 
         findViewById(R.id.share_weibo_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCurrentShareManager = new WeiboShareManager(MainActivity.this);
-//                mCurrentShareManager.share(new ShareContentText("test"), WeiboShareManager.WEIBO_SHARE_TYPE, mShareListener);
-                mCurrentShareManager.share(
-                        new ShareContentWebpage("hello", "lalala", "http://www.liulishuo.com", bitmap)
-                        , WeiboShareManager.WEIBO_SHARE_TYPE, mShareListener);
-            }
-        });
 
-        ///////////////////////////// QQ ///////////////////////////////
-
-        // QQ登录
-        findViewById(R.id.login_qq_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCurrentLoginManager = new QQLoginManager(MainActivity.this);
-                mCurrentLoginManager.login(mLoginListener);
-            }
-        });
-
-        findViewById(R.id.share_qq_friend_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCurrentShareManager = new QQShareManager(MainActivity.this);
-                mCurrentShareManager.share(
-                        new ShareContentWebpage("title", "test", "http://www.baidu.com", "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superplus/img/logo_white_ee663702.png")
-                        , QQShareManager.QQ_SHARE_TYPE, mShareListener);
+                IShareManager iShareManager = new WeiboShareManager(MainActivity.this);
+                iShareManager
+                        .share(new ShareContentText("test"), WeiboShareManager.WEIBO_SHARE_TYPE);
             }
         });
 
         findViewById(R.id.share_qZone_btn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mCurrentShareManager = new QQShareManager(MainActivity.this);
-//                ShareContentWebpage content = new ShareContentWebpage("title", "test", "http://www.baidu.com", getImagePath(rooView));
-                ShareContentWebpage content = new ShareContentWebpage("title", "test", "http://www.baidu.com", getImagePath(rooView));
-                mCurrentShareManager.share(content, QQShareManager.QZONE_SHARE_TYPE, mShareListener);
+            public void onClick(View view) {
+
+                IShareManager iShareManager = new QQShareManager(MainActivity.this);
+                iShareManager.share(
+                        new ShareContentWebpage("英语流利说", "test", "http://www.liulishuo.com",
+                                getImagePath(rooView)),
+                        QQShareManager.QZONE_SHARE_TYPE);
+
             }
         });
+
+        findViewById(R.id.login_wechat_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ILoginManager iLoginManager = new WechatLoginManager
+                        (MainActivity.this);
+                iLoginManager.login(new PlatformActionListener() {
+                    @Override
+                    public void onComplete(HashMap<String, Object> userInfo) {
+                        //TODO
+                    }
+
+                    @Override
+                    public void onError() {
+                        //TODO
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        //TODO
+                    }
+                });
+            }
+        });
+
+        findViewById(R.id.login_weibo_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ILoginManager iLoginManager = new WeiboLoginManager
+                        (MainActivity.this);
+                iLoginManager.login(new PlatformActionListener() {
+                    @Override
+                    public void onComplete(HashMap<String, Object> userInfo) {
+                        //TODO
+                    }
+
+                    @Override
+                    public void onError() {
+
+                    }
+
+                    @Override
+                    public void onCancel() {
+
+                    }
+                });
+            }
+        });
+
+        findViewById(R.id.login_qzone_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ILoginManager iLoginManager = new QQLoginManager(MainActivity.this);
+                iLoginManager.login(new PlatformActionListener() {
+                    @Override
+                    public void onComplete(HashMap<String, Object> userInfo) {
+
+                    }
+
+                    @Override
+                    public void onError() {
+
+                    }
+
+                    @Override
+                    public void onCancel() {
+
+                    }
+                });
+            }
+        });
+
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        ShareBlock.handlerOnActivityResult(mCurrentLoginManager, mCurrentShareManager, requestCode, resultCode, data);
+        mSsoHandler = WeiboLoginManager.getSsoHandler();
+        // SSO 授权回调
+        // 重要：发起 SSO 登陆的 Activity 必须重写 onActivityResult
+        if (mSsoHandler != null) {
+            mSsoHandler.authorizeCallBack(requestCode, resultCode, data);
+        }
     }
 
 
-    private LoginListener mLoginListener = new LoginListener() {
-        public static final String TAG = "LoginListener";
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
-        @Override
-        public void onLoginComplete(String uId, String accessToken, long expiresIn,String data) {
-            Log.d(TAG, "uid = " + uId);
-            Log.d(TAG, "accessToken = " + accessToken);
-            Log.d(TAG, "expires_in = " + expiresIn);
-            // 如果是微信登录，这个回调是在新线程中的，不是在主线程中。所以请不要进行ui操作！
-            Log.d(TAG, "登录成功");
-            Toast.makeText(getBaseContext(), "登录成功", Toast.LENGTH_SHORT).show();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-            // 在认证成功后直接获取用户信息（简单）
-            mCurrentLoginManager.getUserInfo(new GetUserListener() {
-                @Override
-                public void onComplete(HashMap<String, String> userInfo) {
-
-                }
-
-                @Override
-                public void onError(String msg) {
-
-                }
-
-                @Override
-                public void onCancel() {
-
-                }
-            });
-            // 通过参数来获得用户信息，可以在任何地方调用（灵活）
-            mCurrentLoginManager.getUserInfo(accessToken, uId, new GetUserListener() {
-                @Override
-                public void onComplete(HashMap<String, String> userInfo) {
-
-                }
-
-                @Override
-                public void onError(String msg) {
-
-                }
-
-                @Override
-                public void onCancel() {
-
-                }
-            });
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
 
-        @Override
-        public void onError(String msg) {
-            Toast.makeText(getBaseContext(), "登录失败,失败信息：" + msg, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onCancel() {
-            Log.d(TAG, "取消登录");
-            Toast.makeText(getBaseContext(), "取消登录", Toast.LENGTH_SHORT).show();
-        }
-    };
-
-    private ShareStateListener mShareListener = new ShareStateListener() {
-        @Override
-        public void onComplete() {
-            Log.d(TAG, "分享成功");
-            Toast.makeText(getBaseContext(), "分享成功", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onError(String msg) {
-            Log.d(TAG, "分享失败，出错信息：" + msg);
-            Toast.makeText(getBaseContext(), "分享失败，出错信息：" + msg, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onCancel() {
-            Log.d(TAG, "取消分享");
-            Toast.makeText(getBaseContext(), "取消分享", Toast.LENGTH_SHORT).show();
-        }
-    };
+        return super.onOptionsItemSelected(item);
+    }
 
 
     /**
-     * 截取对象是普通view，得到这个view在本地存放的地址
+     * 截取对象是普通view
      */
     private String getImagePath(View view) {
 
-        String imagePath = getPathTemp() + File.separator + System.currentTimeMillis() + ".png";
+        String imagePath =
+                getPathTemp() + File.separator
+                        + System.currentTimeMillis() + ".png";
         try {
             view.setDrawingCacheEnabled(true);
             Bitmap bitmap = view.getDrawingCache();
