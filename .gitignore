@@ -10,8 +10,3 @@ bin/
 .project
 local.properties
 */build
-duitang/
-app/mirror
-/.idea/workspace.xml
-/.idea/libraries
-.gradle/
