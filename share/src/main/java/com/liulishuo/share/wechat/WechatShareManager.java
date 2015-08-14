@@ -4,6 +4,7 @@ import com.liulishuo.share.R;
 import com.liulishuo.share.ShareBlock;
 import com.liulishuo.share.data.ShareConstants;
 import com.liulishuo.share.model.IShareManager;
+import com.liulishuo.share.util.BitmapUtil;
 import com.liulishuo.share.util.ShareUtil;
 import com.liulishuo.share.model.ShareContent;
 import com.tencent.mm.sdk.openapi.IWXAPI;
@@ -18,8 +19,13 @@ import com.tencent.mm.sdk.openapi.WXWebpageObject;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.text.TextUtils;
 import android.widget.Toast;
+
+import java.net.URL;
 
 /**
  * Created by echo on 5/18/15.
@@ -38,7 +44,8 @@ public class WechatShareManager implements IShareManager{
     public static final int WEIXIN_SHARE_TYPE_FRENDS = SendMessageToWX.Req.WXSceneTimeline;
 
 
-    private static final int THUMB_SIZE = 150;
+    // 缩略图大小 = 116 微信里头xdpi就是以这个尺寸展示的, 并且这个尺寸平衡了大小与32k缩略图的限制
+    private static final int THUMB_SIZE = 116;
 
 
     private Context mContext;
@@ -64,7 +71,6 @@ public class WechatShareManager implements IShareManager{
         mIWXAPI = WXAPIFactory.createWXAPI(context, mWeChatAppId, true);
         if (!mIWXAPI.isWXAppInstalled()) {
             Toast.makeText(context, context.getString(R.string.share_install_wechat_tips), Toast.LENGTH_SHORT).show();
-            return;
         }else{
             mIWXAPI.registerApp(mWeChatAppId);
         }
@@ -93,46 +99,30 @@ public class WechatShareManager implements IShareManager{
 
 
     private void sharePicture(int shareType, ShareContent shareContent) {
-
-        Bitmap bmp = ShareUtil.extractThumbNail(shareContent.getImageUrl(), THUMB_SIZE, THUMB_SIZE,
-                true);
-        WXImageObject imgObj = new WXImageObject(bmp);
-
+        WXImageObject imgObj = new WXImageObject();
         WXMediaMessage msg = new WXMediaMessage();
         msg.mediaObject = imgObj;
-        if(bmp!=null){
-            msg.thumbData = ShareUtil.bmpToByteArray(bmp);  //设置缩略图
-        }
+
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = ShareUtil.buildTransaction("imgshareappdata");
         req.message = msg;
         req.scene = shareType;
-        mIWXAPI.sendReq(req);
-
+        sendShare(shareContent.getImageUrl(), req);
     }
 
 
-    private void shareWebPage(int shareType, ShareContent shareContent) {
-
+    private void shareWebPage(final int shareType, final ShareContent shareContent) {
         WXWebpageObject webpage = new WXWebpageObject();
         webpage.webpageUrl = shareContent.getURL();
-        WXMediaMessage msg = new WXMediaMessage(webpage);
+        final WXMediaMessage msg = new WXMediaMessage(webpage);
         msg.title = shareContent.getTitle();
         msg.description = shareContent.getContent();
-
-        Bitmap bmp = ShareUtil.extractThumbNail(shareContent.getImageUrl(), THUMB_SIZE, THUMB_SIZE, true);
-        if (bmp == null) {
-            Toast.makeText(mContext, mContext.getString(R.string.share_pic_empty),
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            msg.thumbData = ShareUtil.bmpToByteArray(bmp);
-        }
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = ShareUtil.buildTransaction("webpage");
         req.message = msg;
         req.scene = shareType;
-        mIWXAPI.sendReq(req);
+        sendShare(shareContent.getImageUrl(), req);
     }
 
 
@@ -146,25 +136,15 @@ public class WechatShareManager implements IShareManager{
         msg.title = shareContent.getTitle();
         msg.description = shareContent.getContent();
 
-        Bitmap thumb = ShareUtil.extractThumbNail(shareContent.getImageUrl(),THUMB_SIZE,THUMB_SIZE,true);
-
-        if (thumb == null) {
-            Toast.makeText(mContext, mContext.getString(R.string.share_pic_empty),
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            msg.thumbData = ShareUtil.bmpToByteArray(thumb);
-        }
-
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = ShareUtil.buildTransaction("music");
         req.message = msg;
         req.scene = shareType;
-        mIWXAPI.sendReq(req);
+        sendShare(shareContent.getImageUrl(), req);
     }
 
     @Override
     public void share(ShareContent content,int shareType) {
-
         switch (content.getShareWay()) {
             case ShareConstants.SHARE_WAY_TEXT:
                 shareText(shareType, content);
@@ -180,5 +160,26 @@ public class WechatShareManager implements IShareManager{
         }
     }
 
+    private void sendShare(final String imageUrl, final SendMessageToWX.Req req) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Bitmap image = BitmapUtil.getBitmapFromUrl(imageUrl);
+                    if (image != null) {
+                        // todo image.length <= 10485760
+                        if (req.message.mediaObject instanceof WXImageObject) {
+                            req.message.mediaObject = new WXImageObject(image);
+                        }
+                        req.message.thumbData = ShareUtil.bmpToByteArray(BitmapUtil.scaleCenterCrop(image, THUMB_SIZE, THUMB_SIZE));
+                    }
+                    // 就算图片没有了 尽量能发出分享
+                    mIWXAPI.sendReq(req);
+                } catch (Throwable throwable) {
+
+                }
+            }
+        }).start();
+    }
 
 }
