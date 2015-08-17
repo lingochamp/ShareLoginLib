@@ -16,8 +16,8 @@ import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +28,7 @@ import java.io.FileOutputStream;
 import java.util.HashMap;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private SsoHandler mSsoHandler;
 
@@ -39,9 +39,13 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         final View rooView = findViewById(R.id.view);
-        
+
+        //初始化第三方key
         ShareBlock.getInstance().initShare(" ", " ", "",
                 "");
+
+        //初始化微博回调地址
+        ShareBlock.getInstance().initWeiboRedriectUrl("http://xxx.com");
 
         findViewById(R.id.share_wechat_btn).setOnClickListener(new View.OnClickListener() {
             @Override

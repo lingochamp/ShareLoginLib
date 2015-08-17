@@ -5,7 +5,7 @@ ShareLoginLib likes simple sharesdk or umeng in China . It is a tool to help dev
 -------------------------
 
 ```groovy
-compile 'com.echodjb.shareloginlib:share:0.4'
+compile 'com.echodjb.shareloginlib:share:0.5'
 ```
 
 
@@ -17,15 +17,21 @@ compile 'com.echodjb.shareloginlib:share:0.4'
 ```java
    ShareBlock.getInstance().initShare(wechatAppid, weiboId, qqId,
                    wechatSecret);
-  ```
+```
 
-#### 2.分享到微信
+#### 2.初始化微博回调地址
+
+```java
+      ShareBlock.getInstance().initWeiboRedriectUrl(weiboRedriectUrl);
+```
+
+#### 3.分享到微信
 ```java
   IShareManager iShareManager = new WechatShareManager(context);
   iShareManager.share(new ShareContentWebpage("title", "content", "dataUrl",
   "imageUrl",WechatShareManager.WEIXIN_SHARE_TYPE_TALK);
- ```
-#### 3.微信登录
+```
+#### 4.微信登录
 
 ```java
   ILoginManager iLoginManager = new WechatLoginManager
@@ -46,7 +52,8 @@ compile 'com.echodjb.shareloginlib:share:0.4'
                         //TODO
                     }
                 });
- ```
+                
+```
 
 # Demo
 -------------------------

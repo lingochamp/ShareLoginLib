@@ -19,18 +19,21 @@ public class ShareBlock {
     }
 
     private String mWechatAppId = "";
-    private String mWeiboAppId  = "";
+
+    private String mWeiboAppId = "";
+
     private String mQQAppId = "";
-    private String mWechatSecret= "";
+
+    private String mWechatSecret = "";
+
+    private String mRedriectUrl = "http://www.liulishuo.com";  //default url
 
 
     /**
      * init all config
-     * @param wechatAppId
-     * @param weiboAppId
-     * @param qqAppId
      */
-    public void initShare(String wechatAppId, String weiboAppId, String qqAppId,String wechatSecret){
+    public void initShare(String wechatAppId, String weiboAppId, String qqAppId,
+            String wechatSecret) {
         mWechatAppId = wechatAppId;
         mWeiboAppId = weiboAppId;
         mQQAppId = qqAppId;
@@ -41,10 +44,8 @@ public class ShareBlock {
 
     /**
      * init wechat config
-     * @param wechatAppId
-     * @param wechatSecret
      */
-    public void initWechat(String wechatAppId,String wechatSecret){
+    public void initWechat(String wechatAppId, String wechatSecret) {
         mWechatAppId = wechatAppId;
         mWechatSecret = wechatSecret;
     }
@@ -52,22 +53,23 @@ public class ShareBlock {
 
     /**
      * init weibo config
-     * @param weiboAppId
      */
-    public void initWeibo(String weiboAppId){
+    public void initWeibo(String weiboAppId) {
 
         mWeiboAppId = weiboAppId;
     }
 
     /**
      * init QQ config
-     * @param qqAppId
      */
-    public void initQQ(String qqAppId){
+    public void initQQ(String qqAppId) {
 
         mQQAppId = qqAppId;
     }
 
+    public void initWeiboRedriectUrl(String url) {
+        mRedriectUrl = url;
+    }
 
 
     public String getWechatAppId() {
@@ -84,5 +86,10 @@ public class ShareBlock {
 
     public String getWechatSecret() {
         return mWechatSecret;
+    }
+
+
+    public String getRedriectUrl() {
+        return mRedriectUrl;
     }
 }

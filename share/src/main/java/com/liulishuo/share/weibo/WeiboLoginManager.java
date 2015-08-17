@@ -25,9 +25,6 @@ import java.util.HashMap;
  */
 public class WeiboLoginManager implements ILoginManager{
 
-
-    private static final String redirectUrl = "http://www.liulishuo.com";
-
     private static final String SCOPE =
             "friendships_groups_read,friendships_groups_write,statuses_to_me_read,"
                     + "follow_app_official_microblog";
@@ -43,6 +40,9 @@ public class WeiboLoginManager implements ILoginManager{
     private PlatformActionListener mPlatformActionListener;
 
 
+    private String mRedirectUrl ;
+
+
     /**
      * 注意：SsoHandler 仅当 SDK 支持 SSO 时有效
      */
@@ -53,6 +53,7 @@ public class WeiboLoginManager implements ILoginManager{
 
         mContext = context;
         mSinaAppKey = ShareBlock.getInstance().getWeiboAppId();
+        mRedirectUrl = ShareBlock.getInstance().getRedriectUrl();
 
     }
 
@@ -65,7 +66,7 @@ public class WeiboLoginManager implements ILoginManager{
     public void login(PlatformActionListener platformActionListener) {
         mPlatformActionListener = platformActionListener;
         AccessTokenKeeper.clear(mContext);
-        mAuthInfo = new AuthInfo(mContext, mSinaAppKey, redirectUrl, SCOPE);
+        mAuthInfo = new AuthInfo(mContext, mSinaAppKey, mRedirectUrl, SCOPE);
         mSsoHandler = new SsoHandler((Activity) mContext, mAuthInfo);
         mSsoHandler.authorize(new AuthListener());
 
