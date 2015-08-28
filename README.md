@@ -60,6 +60,12 @@ compile 'com.echodjb.shareloginlib:share:0.5'
 
 ![screenshot](http://7xjb6z.com1.z0.glb.clouddn.com/screenshot.png)
 
+Libraries
+---------
+ * Retrofit - http://square.github.io/retrofit
+ * OkHttp - http://square.github.io/okhttp
+ * RxJava - https://github.com/ReactiveX/RxJava
+
 # LICENCE
 -------------------------
 
