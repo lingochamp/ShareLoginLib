@@ -8,6 +8,9 @@ ShareLoginLib likes simple sharesdk or umeng in China . It is a tool to help dev
 compile 'com.echodjb.shareloginlib:share:0.6'
 ```
 
+# eclipse
+[![GO HOME](http://ww4.sinaimg.cn/large/5e9a81dbgw1eu90m08v86j20dw09a3yu.jpg)
+
 # How to use (参考MainActivity)
 -------------------------
 
