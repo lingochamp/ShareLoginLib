@@ -5,9 +5,8 @@ ShareLoginLib likes simple sharesdk or umeng in China . It is a tool to help dev
 -------------------------
 
 ```groovy
-compile 'com.echodjb.shareloginlib:share:0.5'
+compile 'com.echodjb.shareloginlib:share:0.6'
 ```
-
 
 # How to use (参考MainActivity)
 -------------------------
@@ -59,6 +58,14 @@ compile 'com.echodjb.shareloginlib:share:0.5'
 -------------------------
 
 ![screenshot](http://7xjb6z.com1.z0.glb.clouddn.com/screenshot.png)
+
+# ReleaseNotes
+-------------
+
+#### V0.6 (2015-09-10)
+* 更新QQ sdk 修复X86机型QQ登录闪退。
+
+
 
 # Libraries
 ---------
